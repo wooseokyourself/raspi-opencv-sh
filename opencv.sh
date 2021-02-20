@@ -2,17 +2,18 @@
 sudo apt-get update
 sudo apt-get upgrade
 # dependencies
-sudo apt-get install build-essential cmake git unzip pkg-config \
-libjpeg-dev libpng-dev \
-libavcodec-dev libavformat-dev libswscale-dev \
-libgtk2.0-dev libcanberra-gtk* libgtk-3-dev \
-libxvidcore-dev libx264-dev \
-libtbb2 libtbb-dev libdc1394-22-dev \
-libv4l-dev v4l-utils \
-libopenblas-dev libatl as-base-dev libblas-dev \
-liblapack-dev gfortran libhdf5-dev \
-libprotobuf-dev libgoogle-glog-dev libgflags-dev \
-protobuf-compiler
+sudo apt-get install build-essential cmake git unzip pkg-config
+sudo apt-get install libjpeg-dev libpng-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install libgtk2.0-dev libcanberra-gtk* libgtk-3-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install python3-dev python3-numpy python3-pip
+sudo apt-get install libtbb2 libtbb-dev libdc1394-22-dev
+sudo apt-get install libv4l-dev v4l-utils
+sudo apt-get install libopenblas-dev libatl as-base-dev libblas-dev
+sudo apt-get install liblapack-dev gfortran libhdf5-dev
+sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev
+sudo apt-get install protobuf-compiler
 
 cd ~
 wget -O opencv-4.5.0.zip https://github.com/opencv/opencv/archive/4.5.0.zip
@@ -37,6 +38,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D OPENCV_ENABLE_NONFREE=ON \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
+        -D BUILD_NEW_PYTHON_SUPPORT=ON \
+        -D BUILD_opencv_python3=TRUE \
         -D OPENCV_GENERATE_PKGCONFIG=ON \
         -D BUILD_EXAMPLES=OFF ..
 
