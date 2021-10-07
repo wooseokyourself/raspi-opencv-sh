@@ -29,6 +29,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D WITH_FFMPEG=ON \
         -D WITH_TBB=ON \
         -D BUILD_TBB=ON \
+        -D WITH_TENGINE=ON \
         -D BUILD_TESTS=OFF \
         -D WITH_EIGEN=OFF \
         -D WITH_V4L=ON \
